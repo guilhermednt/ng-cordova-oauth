@@ -35,7 +35,8 @@ angular.module("oauth.providers", [
   'oauth.jawbone',
   'oauth.untappd',
   'oauth.dribble',
-  'oauth.pocket'])
+  'oauth.pocket',
+  'oauth.v2'])
   .factory("$cordovaOauth", cordovaOauth);
 
 function cordovaOauth(
@@ -44,7 +45,7 @@ function cordovaOauth(
   $twitter, $meetup, $salesforce, $strava, $withings, $foursquare, $magento,
   $vkontakte, $odnoklassniki, $imgur, $spotify, $uber, $windowslive, $yammer,
   $venmo, $stripe, $rally, $familySearch, $envato, $weibo, $jawbone, $untappd,
-  $dribble, $pocket) {
+  $dribble, $pocket, $v2) {
 
   return {
     azureAD: $azureAD.signin,
@@ -83,6 +84,7 @@ function cordovaOauth(
     untappd: $untappd.signin,
     dribble: $dribble.signin,
     pocket: $pocket.signin,
+    v2: $v2.signin,
   };
 }
 
@@ -123,5 +125,6 @@ cordovaOauth.$inject = [
   '$jawbone',
   '$untappd',
   '$dribble',
-  '$pocket'
+  '$pocket',
+  '$v2'
 ];
